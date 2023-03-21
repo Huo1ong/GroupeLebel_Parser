@@ -1,0 +1,15 @@
+ Route::group(['scheme' => 'https'], function () {
+        Route::get('/dashboard_admin', [Controller::class, 'DashboardAdmin' ,function () ///Page d'accueil admin
+        {
+                return view('/admin/dashboard_admin');
+        }])->middleware(['auth', 'admin','verified'])->name('dashboard.admin');
+
+        Route::get('/dashboard_user', [Controller::class, 'DashboardUser' ,function () //Page d'accueil user
+        {
+                return view('/user/dashboard_user');
+        }])->name('dashboard.user')->middleware(['auth', 'admin','verified']);
+
+        Route::get('/connexion',[Controller::class, 'Connexion'])->name('connexion'); //Page de connexion
+
+        Route::post('/connexion/titulaire',[Controller::class, 'ConnexionTitulaire'])->name('connexion.titulaire');
+    });
