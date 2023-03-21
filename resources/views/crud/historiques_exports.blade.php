@@ -1,6 +1,6 @@
-@extends('master_admin')
+@extends(Auth::check() && Auth::user()->isAdmin() ? 'master_admin' : 'master_user')
 
-@section('admin')
+@section(Auth::check() && Auth::user()->isAdmin() ? 'admin' : 'user')
     <style>
         * {
             margin: 0px;

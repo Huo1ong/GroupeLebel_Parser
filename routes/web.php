@@ -32,9 +32,9 @@ use Illuminate\Support\Facades\Route;
     }])->name('dashboard.user')->middleware(['auth', 'admin','verified']);
 
 /* --- Imports --- Exports --- */
-    Route::get('/import', [Controller::class, 'Import' ,function () //Page pour les imports et les exports
+    Route::get('/import', [Controller::class, 'Import' ,function () //Page pour les imports et les exports (côté admin)
     {
-        return view('/admin/import');
+        return view('/import');
     }])->name('import.admin');
 
     /* - Imports - */
@@ -70,15 +70,10 @@ use Illuminate\Support\Facades\Route;
     }])->name('admin.smaat');
 
     /* Historiques d'exports */
-    Route::get('/historiques_admin', [Controller::class, 'HistoriqueAdmin' ,function () //Page des historiques d'export Smaat (admin)
+    Route::get('/historiques_exports', [Controller::class, 'Historique_Exports' ,function () //Page des historiques d'export Smaat
     {
-        return view('/admin/historiques_admin');
-    }])->name('historique.admin');
-
-    Route::get('/historiques_user', [Controller::class, 'HistoriqueUser' ,function () //Page des historiques d'export Smaat (user)
-    {
-        return view('/user/historiques_user');
-    }])->name('historique.user');
+        return view('/crud/historiques_exports');
+    }])->name('historiques_exports');
 
     Route::get('download/{id}', [Controller::class, 'download']); //Fonction de download de l'export choisi
 

@@ -82,29 +82,15 @@ class Controller extends BaseController
     /* ----- DÉBUT : fonctions -> Imports/Exports ----- */
     public function Import() //Fonction redirection page import
     {
-       /* if (!Gate::allows('access-admin')) {
-            return back()->with('error', "Vous n'avez pas l'autorisation pour accéder à cette page car vous n'êtes pas administrateur !");
-        }*/
-        return view('admin/import');
+        $data = DB::table('users')->get();
+        return view('import', compact('data'));
     } //Fin de la méthode "Import"
 
-    public function HistoriqueUser() //Fonction redirection page historique export user
+    public function Historique_Exports() //Fonction redirection page historique export
     {
-        if (Gate::allows('access-admin')) {
-            return back()->with('error', "Vous n'avez pas l'autorisation pour accéder à cette page car vous n'êtes pas utilisateur !");
-        }
-        $data = HistoriquesExport::all();
-        return view('user/historiques_user',['historiquesexports'=>$data]);
-    } //Fin de la méthode "HistoriqueUser"
-
-    public function HistoriqueAdmin() //Fonction redirection page historique export admin
-    {
-        if (!Gate::allows('access-admin')) {
-            return back()->with('error', "Vous n'avez pas l'autorisation pour accéder à cette page car vous n'êtes pas administrateur !");
-        }
         $data = DB::table('historiquesexports')->get();
-        return view('admin/historiques_admin', compact('data'));
-    } //Fin de la méthode "HistoriqueAdmin"
+        return view('crud/historiques_exports', compact('data'));
+    } //Fin de la méthode "Historique_Exports"
 
     public function download($id) //Fonction download export (page historique exports)
     {
@@ -115,6 +101,9 @@ class Controller extends BaseController
 
     public function Historiques_Uploads() //Fonction redirection page historique upload
     {
+        if (!Gate::allows('access-admin')) {
+            return back()->with('error', "Vous n'avez pas l'autorisation pour accéder à cette page car vous n'êtes pas administrateur !");
+        }
         $data = DB::table('uploads')->get();
         return view('crud/historiques_uploads', compact('data'));
     } //Fin de la méthode "Historiques_Uploads"

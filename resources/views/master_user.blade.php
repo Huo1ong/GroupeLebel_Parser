@@ -83,19 +83,19 @@
                     </a>
                 </li>
             </ul>
-            <ul class="metismenu" id="menu1">
-                <li class="single-nav-wrapper">
-                    <a href="historiques_user" class="menu-item">
-                        <span class="left-icon"><i class="fas fa-calendar-times"></i></span>
-                        <span class="menu-text">Historiques</span>
-                    </a>
-                </li>
-            </ul>
             <ul>
                 <li class="single-nav-wrapper">
                     <a href="import" class="menu-item">
                         <span class="left-icon"><i class="fas fa-file-import"></i></span>
                         <span class="menu-text">Imports/Exports</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="metismenu" id="menu1">
+                <li class="single-nav-wrapper">
+                    <a href="historiques_exports" class="menu-item">
+                        <span class="left-icon"><i class="fas fa-calendar-times"></i></span>
+                        <span class="menu-text">Historiques</span>
                     </a>
                 </li>
             </ul>
@@ -129,13 +129,8 @@
 <script src="{{ asset('panel/assets/plugins/pie_chart/chart.loader.js') }}"></script>
 <script src="{{ asset('panel/assets/plugins/pie_chart/pie.active.js') }}"></script>
 
-
 <!-- Main js -->
 <script src="{{ asset('panel/assets/js/main.js') }}"></script>
-
-
-
-
 
 </body>
 </html>

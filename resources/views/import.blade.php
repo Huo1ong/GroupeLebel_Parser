@@ -1,6 +1,6 @@
-@extends('master_admin')
+@extends(Auth::check() && Auth::user()->isAdmin() ? 'master_admin' : 'master_user')
 
-@section('admin')
+@section(Auth::check() && Auth::user()->isAdmin() ? 'admin' : 'user')
     <div class="content_wrapper">
         <!--middle content wrapper-->
         <div class="middle_content_wrapper">

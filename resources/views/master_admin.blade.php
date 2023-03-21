@@ -80,23 +80,23 @@
                     </a>
                 </li>
                 <li class="single-nav-wrapper">
+                    <a href="import" class="menu-item">
+                        <span class="left-icon"><i class="fas fa-file-import"></i></span>
+                        <span class="menu-text">Imports/Exports</span>
+                    </a>
+                </li>
+                <li class="single-nav-wrapper">
                     <a class="has-arrow menu-item" href="#" aria-expanded="false">
                         <span class="left-icon"><i class="fas fa-table"></i></span>
                         <span class="menu-text">CRUD</span>
                     </a>
                     <ul class="dashboard-menu">
                         <li><a href="historiques_uploads">Historiques des uploads</a></li>
-                        <li><a href="historiques_admin">Historiques des exports</a></li>
+                        <li><a href="historiques_exports">Historiques des exports</a></li>
                         <li><a href="desjardins">Desjardins</a></li>
                         <li><a href="magikpaie">Magikpaie</a></li>
                         <li><a href="smaat">Smaat</a></li>
                     </ul>
-                </li>
-                <li class="single-nav-wrapper">
-                    <a href="import" class="menu-item">
-                        <span class="left-icon"><i class="fas fa-file-import"></i></span>
-                        <span class="menu-text">Imports/Exports</span>
-                    </a>
                 </li>
             </ul>
         </nav>
@@ -128,10 +128,6 @@
 <script src="{{ asset('panel/assets/plugins/pie_chart/pie.active.js') }}"></script>
 <!-- Main js -->
 <script src="{{ asset('panel/assets/js/main.js') }}"></script>
-
-
-
-
 
 </body>
 </html>
